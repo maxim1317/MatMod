@@ -13,12 +13,13 @@ std::string RandGen(long long m, long a, int c, int x0, long long amount, std::s
     long long cur, prev;
 
     prev = x0;
-    fprintf(out, "%lld\n", prev);
+    fprintf(out, "%lld\n", prev/d);
 
     for (long long i = 0; i < amount; ++i)
     {
         cur = (a * prev + c) % m;
-        fprintf(out, "%lld\n", cur);
+        double res = (double)cur/m;
+        fprintf(out, "%f\n", res);
         prev = cur;
     }
 
