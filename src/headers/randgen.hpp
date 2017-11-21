@@ -6,7 +6,7 @@ std::string RandGen(long long m, long a, int c, int x0, long long amount, std::s
 {
     FILE *out;
     std::string dir = "rands/";
-    std::string ext = ".txt";
+    std::string ext = ".rand";
     filename = dir + "rand" + "_" + filename + ext;
     out = fopen(filename.c_str(), "w");
 
