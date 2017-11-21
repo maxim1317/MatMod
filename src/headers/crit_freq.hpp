@@ -18,11 +18,11 @@ bool FrequencyCriteria(long long amount, std::string inpfile)
         V[alpha]++;
         i++;
     }
-    for (int i = 0; i < d; ++i)
-    {
-        double stat = (double)V[i]/amount;
-        printf("%f\n", stat);
-    }
+    // for (int i = 0; i < d; ++i)
+    // {
+    //     double stat = (double)V[i]/amount;
+    //     printf("V[%d]/amount = %f\n", i, stat);
+    // }
 
     double stat = 0;
 
@@ -31,14 +31,20 @@ bool FrequencyCriteria(long long amount, std::string inpfile)
         stat += (double)std::pow(V[i]-amount*1.0/d, 2)/(amount*1.0/d);
     }
 
-    printf("stat = %f\n", stat);
+    // printf("stat = %f\n", stat);
 
     double chistat = ChiGen(0.95, d-1);
 
-    printf("chi = %f\n", chistat);
+    // printf("chi = %f\n", chistat);
 
-    in.close();
-    return true;
-    in.close();
-    return false;
+    if (stat < chistat)
+    {
+        in.close();
+        return true;
+    }
+    else
+    {
+        in.close();
+        return false;
+    }
 }
