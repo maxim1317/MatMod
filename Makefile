@@ -1,5 +1,11 @@
+ifeq ("$(wildcard rands/*.rand)","")
+	OPT = "-n"	
+else
+	OPT = 
+endif
+
 all: compile
-	@./randcheck 
+	@./randcheck $(OPT)
 
 compile: clean
 	@mkdir -p rands/
@@ -10,9 +16,6 @@ compile: clean
 
 clean:
 	@rm -f randcheck
-
-gen: compile
-	@./randcheck -n
 
 erase: clean
 	@rm -rf rands

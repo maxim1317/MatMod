@@ -2,44 +2,46 @@
 #define __CRIT_FREQ_HPP__
 #endif
 
-bool FrequencyCriteria(long long amount, std::string inpfile)
+bool PairCriteria(long long amount, std::string inpfile)
 {
     std::ifstream in(inpfile.c_str(),std::ios::in);
 
     std::vector<int> V;
-    V.assign(d, 0);
+    V.assign(d*d, 0);
 
     double buf;
-    int alpha;
+    int alpha, beta;
 
     int i = 0;
-    while (i < amount && in >> buf ) {
+    while (i < amount/2 && in >> buf ) {
         alpha = abs(static_cast<int>(buf*10))%10;
-        V[alpha]++;
+        in>>buf;
+        beta = abs(static_cast<int>(buf*10))%10;
+        V[10*alpha+beta]++;
         i++;
     }
-    // for (int i = 0; i < d; ++i)
+    // for (int i = 0; i < d*d; ++i)
     // {
     //     double stat = (double)V[i]/amount;
-    //     printf("V[%d]/amount = %f\n", i, stat);
+    //     printf("V[%2d]/amount = %f\n", i, stat);
     // }
 
     double stat = 0;
 
-    for (int i = 0; i < d; ++i)
+    for (int i = 0; i < d*d; ++i)
     {
-        stat += (double)std::pow(V[i]-amount*1.0/d, 2)/(amount*1.0/d);
+        stat += (double)std::pow(V[i]-amount/2*1.0/(d*d), 2)/(amount/2*1.0/(d*d));
     }
 
     // printf("stat = %f\n", stat);
 
-    double chistat = ChiGen(0.95, d-1);
+    double chistat = ChiGen(0.95, d*d-1);
 
     // printf("chi = %f\n", chistat);
 
     in.close();
 
-    printf("  Frequency criteria - ");
+    printf("  Pair      criteria - ");
     if (stat < chistat)
     {
         printf("OK\n");

@@ -20,11 +20,14 @@ std::string RandGen(long long, long, int, int, long long, std::string);
 
 double ChiGen(double, int);
 
-bool FrequencyCriteria(long, long, std::string);
+bool FrequencyCriteria(long long, std::string);
+bool PairCriteria(long long, std::string);
+
 
 #include "chigen.hpp"
 #include "randgen.hpp"
 #include "crit_freq.hpp"
+#include "crit_pair.hpp"
 
 int GetOption(int argc, char const *argv[])
 {
