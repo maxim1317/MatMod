@@ -12,23 +12,23 @@
 
 ### /
 
-* [Makefile](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - собственно Makefile, описывающий правила сборки.
+* [Makefile](https://github.com/maxim1317/MatMod/blob/Makefile) - собственно Makefile, описывающий правила сборки.
 
 ### /src
 
-* [randcheck.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - main(). В нем задается количество рассматриваемых элементов.
-* [/src/headers](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - директория с описанием всех используемых функкций
+* [randcheck.cpp](https://github.com/maxim1317/MatMod/blob/master/src/randcheck.cpp) - main(). В нем задается количество рассматриваемых элементов.
+* [/src/headers](https://github.com/maxim1317/MatMod/blob/master/src/headers/) - директория с описанием всех используемых функкций
   * [randcheck.h](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - главный заголовочный файл с прототипами функций
   * Генераторы:
-    * [chigen.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - генератор таблицы  χ2
-    * [randgen.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - генератор случайных чисел по заданным параметрам
-    * [randlist.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - список параметров разных генераторов
-    * [gens.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - вспомогательный файл для сборки
+    * [chigen.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/chigen.cpp) - генератор таблицы  χ2
+    * [randgen.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randgen.cpp) - генератор случайных чисел по заданным параметрам
+    * [randlist.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randlist.cpp) - список параметров разных генераторов
+    * [gens.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/gens.cpp) - вспомогательный файл для сборки
   * Тесты:
-    * [crit_all.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - вызывает все четыре проверки
-    * [crit_freq.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - частотный критерий
-    * [crit_pair.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - критерий пар
-    * [crit_series.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) -критерий серий
-    * [crit_poker.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - покер-критерий
-    * [crits.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - вспомогательный файл для сборки
-  * [misc.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/randcheck.h) - вспомогательные функции для разукраски терминала и выуживания опций из аргументов программы
+    * [crit_all.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_all.cpp) - вызывает все четыре проверки
+    * [crit_freq.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_freq.cpp) - частотный критерий
+    * [crit_pair.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_pair.cpp) - критерий пар
+    * [crit_series.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_series.cpp) -критерий серий
+    * [crit_poker.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_poker.cpp) - покер-критерий
+    * [crits.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crits.cpp) - вспомогательный файл для сборки
+  * [misc.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/misc.cpp) - вспомогательные функции для разукраски терминала и выуживания опций из аргументов программы
