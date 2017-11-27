@@ -11,7 +11,8 @@ int Sterling (int n, int k){
 
 bool PokerCriteria(int d, long long amount, std::string inpfile)
 {
-    std::ifstream in(inpfile.c_str(),std::ios::in);
+    std::ifstream in(inpfile.c_str(), std::ios::in);
+    // printf("%s\n",inpfile.c_str());
 
     std::vector<int> V, beta;
     std::vector<double> p;
@@ -81,7 +82,7 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
     if (stat < chistat)
     {
         printf("[%s", conColor(120));
-        printf(" OK ");
+        printf("   OK   ");
         printf("%s]\n", conColor(0));
         return true;
     }

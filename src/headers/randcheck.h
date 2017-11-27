@@ -14,14 +14,16 @@
 int GetOption(int, char const*[]);
 
 // Rand(m, a, c, X0, amount, filename) = filename
-std::string RandGen(int, long long, long, int, int, long long, std::string);
+std::string RandGen(int, long long, long long, long long, long long, long long, std::string);
+void CheckAll(long long, int, int);
 
 double ChiGen(double, int);
 
+bool AllCriteria      (int, long long, std::string);
 bool FrequencyCriteria(int, long long, std::string);
-bool PairCriteria(int, long long, std::string);
-bool SeriesCriteria(int, long long, int, std::string);
-bool PokerCriteria(int, long long, std::string);
+bool PairCriteria     (int, long long, std::string);
+bool SeriesCriteria   (int, long long, std::string);
+bool PokerCriteria    (int, long long, std::string);
 
 const char* conColor (int);
 

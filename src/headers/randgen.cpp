@@ -3,7 +3,7 @@
 
 #include "randcheck.h"
 
-std::string RandGen(int d, long long m, long a, int c, int x0, long long amount, std::string filename)
+std::string RandGen(int d, long long m, long long a, long long c, long long x0, long long amount, std::string filename)
 {
     FILE *out;
     std::string dir = "rands/";

@@ -1,3 +1,4 @@
+#include "crit_all.cpp"
 #include "crit_freq.cpp"
 #include "crit_pair.cpp"
 #include "crit_series.cpp"

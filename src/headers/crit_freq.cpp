@@ -48,7 +48,7 @@ bool FrequencyCriteria(int d, long long amount, std::string inpfile)
     if (stat < chistat)
     {
         printf("[%s", conColor(120));
-        printf(" OK ");
+        printf("   OK   ");
         printf("%s]\n", conColor(0));
         return true;
     }

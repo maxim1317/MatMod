@@ -3,9 +3,10 @@
 
 #include "randcheck.h"
 
-bool SeriesCriteria(int d, long long amount, int m, std::string inpfile)
+bool SeriesCriteria(int d, long long amount, std::string inpfile)
 {
-    std::ifstream in(inpfile.c_str(),std::ios::in);
+    int m = 5;
+    std::ifstream in(inpfile.c_str(), std::ios::in);
 
     long long count=0;
     std::vector<int> V;
@@ -75,7 +76,7 @@ bool SeriesCriteria(int d, long long amount, int m, std::string inpfile)
     if (stat < chistat)
     {
         printf("[%s", conColor(120));
-        printf(" OK ");
+        printf("   OK   ");
         printf("%s]\n", conColor(0));
         return true;
     }
