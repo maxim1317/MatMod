@@ -3,6 +3,7 @@
 int main(int argc, char const *argv[])
 {
     long long amount = 100000;
+    int m = 5;
 
     std::string randfile = "rands/rand_derive.rand";
 
@@ -12,6 +13,10 @@ int main(int argc, char const *argv[])
     
     FrequencyCriteria(amount, randfile);
     PairCriteria(amount, randfile);
-    
+    SeriesCriteria(amount, m, randfile);
+    PokerCriteria(amount, randfile);    
+
+
+    std::cout<<std::endl;
     return 0;
 }

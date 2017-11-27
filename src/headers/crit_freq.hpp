@@ -39,15 +39,23 @@ bool FrequencyCriteria(long long amount, std::string inpfile)
 
     in.close();
 
+    printf("\n");
+    printf("%s", conColor(120));
+    printf("%s", conColor(0));
+
     printf("  Frequency criteria - ");
     if (stat < chistat)
     {
-        printf("OK\n");
+        printf("[%s", conColor(120));
+        printf(" OK ");
+        printf("%s]\n", conColor(0));
         return true;
     }
     else
     {
-        printf("NOT OK\n");
+        printf("[%s", conColor(110));
+        printf(" NOT OK ");
+        printf("%s]\n", conColor(0));
         return false;
     }
 }

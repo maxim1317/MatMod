@@ -1,5 +1,5 @@
-#ifndef __CRIT_FREQ_HPP__
-#define __CRIT_FREQ_HPP__
+#ifndef __CRIT_PAIR_HPP__
+#define __CRIT_PAIR_HPP__
 #endif
 
 bool PairCriteria(long long amount, std::string inpfile)
@@ -41,15 +41,21 @@ bool PairCriteria(long long amount, std::string inpfile)
 
     in.close();
 
+    printf("%s", conColor(0));
+
     printf("  Pair      criteria - ");
     if (stat < chistat)
     {
-        printf("OK\n");
+        printf("[%s", conColor(120));
+        printf(" OK ");
+        printf("%s]\n", conColor(0));
         return true;
     }
     else
     {
-        printf("NOT OK\n");
+        printf("[%s", conColor(110));
+        printf(" NOT OK \n");
+        printf("%s]\n", conColor(0));
         return false;
     }
 }
