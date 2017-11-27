@@ -1,6 +1,7 @@
 #ifndef __CRIT_POKER_HPP__
 #define __CRIT_POKER_HPP__
-#endif
+
+#include "randcheck.h"
 
 int Sterling (int n, int k){
     if (n == 0 || n == k) return 1;
@@ -8,7 +9,7 @@ int Sterling (int n, int k){
     return Sterling(n - 1, k - 1) + k * Sterling(n - 1, k);
 }
 
-bool PokerCriteria(long long amount, std::string inpfile)
+bool PokerCriteria(int d, long long amount, std::string inpfile)
 {
     std::ifstream in(inpfile.c_str(),std::ios::in);
 
@@ -92,3 +93,4 @@ bool PokerCriteria(long long amount, std::string inpfile)
         return false;
     }
 }
+#endif

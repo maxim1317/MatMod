@@ -1,6 +1,7 @@
 #ifndef __CHIGEN_HPP__
 #define __CHIGEN_HPP__
-#endif
+
+#include "randcheck.h"
 
 double a[] = { 1.0000886 ,  0.4713941  , 0.0001348028, -0.008553069,  0.00312558 , -0.0008426812,  0.00009780499};
 double b[] = {-0.2237368 ,  0.02607083 , 0.01128186  , -0.01153761 ,  0.005169654,  0.00253001  , -0.001450117  };
@@ -28,3 +29,5 @@ double ChiGen(double alpha, int nu)
 
     return nu * std::pow(sum, 3.0);
 }
+
+#endif

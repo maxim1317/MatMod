@@ -4,17 +4,18 @@ int main(int argc, char const *argv[])
 {
     long long amount = 100000;
     int m = 5;
+    int d = 10;
 
     std::string randfile = "rands/rand_derive.rand";
 
     int option = GetOption(argc, argv);
     if (option)
-        randfile = RandGen(std::pow(2, 32), 3141592653, 1, 0, amount, "derive");    
+        randfile = RandGen(d, std::pow(2, 32), 3141592653, 1, 0, amount, "derive");    
     
-    FrequencyCriteria(amount, randfile);
-    PairCriteria(amount, randfile);
-    SeriesCriteria(amount, m, randfile);
-    PokerCriteria(amount, randfile);    
+    FrequencyCriteria(d, amount, randfile);
+    PairCriteria(d, amount, randfile);
+    SeriesCriteria(d, amount, m, randfile);
+    PokerCriteria(d, amount, randfile);    
 
 
     std::cout<<std::endl;

@@ -1,8 +1,9 @@
 #ifndef __RANDGEN_HPP__
 #define __RANDGEN_HPP__
-#endif
 
-std::string RandGen(long long m, long a, int c, int x0, long long amount, std::string filename)
+#include "randcheck.h"
+
+std::string RandGen(int d, long long m, long a, int c, int x0, long long amount, std::string filename)
 {
     FILE *out;
     std::string dir = "rands/";
@@ -26,3 +27,4 @@ std::string RandGen(long long m, long a, int c, int x0, long long amount, std::s
     fclose(out);
     return filename;
 }
+#endif

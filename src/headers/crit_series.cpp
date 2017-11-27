@@ -1,8 +1,9 @@
 #ifndef __CRIT_SERIES_HPP__
 #define __CRIT_SERIES_HPP__
-#endif
 
-bool SeriesCriteria(long long amount, int m, std::string inpfile)
+#include "randcheck.h"
+
+bool SeriesCriteria(int d, long long amount, int m, std::string inpfile)
 {
     std::ifstream in(inpfile.c_str(),std::ios::in);
 
@@ -86,3 +87,4 @@ bool SeriesCriteria(long long amount, int m, std::string inpfile)
         return false;
     }
 }
+#endif
