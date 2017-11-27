@@ -15,7 +15,7 @@ HEAD = $(HEADERS)/randcheck.h
 OBJS = $(TMP)/main.o $(TMP)/misc.o $(TMP)/gens.o $(TMP)/crits.o
 
 CC = clang++
-DEBUG = 
+DEBUG = -g -Wall -O0
 CFLAGS = -std=c++11 -c $(DEBUG)
 LFLAGS = -std=c++11 $(DEBUG)
 

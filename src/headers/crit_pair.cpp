@@ -7,7 +7,7 @@ bool PairCriteria(int d, long long amount, std::string inpfile)
 {
     std::ifstream in(inpfile.c_str(),std::ios::in);
 
-    std::vector<int> V;
+    std::vector<long long> V;
     V.assign(d*d, 0);
 
     double buf;
@@ -42,7 +42,7 @@ bool PairCriteria(int d, long long amount, std::string inpfile)
 
     in.close();
 
-    printf("%s", conColor(0));
+    // printf("%s", conColor(0));
 
     printf("  Pair      criteria - ");
     if (stat < chistat)
@@ -55,7 +55,7 @@ bool PairCriteria(int d, long long amount, std::string inpfile)
     else
     {
         printf("[%s", conColor(110));
-        printf(" NOT OK \n");
+        printf(" NOT OK ");
         printf("%s]\n", conColor(0));
         return false;
     }

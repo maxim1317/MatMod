@@ -7,7 +7,7 @@ bool FrequencyCriteria(int d, long long amount, std::string inpfile)
 {
     std::ifstream in(inpfile.c_str(),std::ios::in);
 
-    std::vector<int> V;
+    std::vector<long long> V;
     V.assign(d, 0);
 
     double buf;

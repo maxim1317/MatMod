@@ -9,7 +9,7 @@ bool SeriesCriteria(int d, long long amount, std::string inpfile)
     std::ifstream in(inpfile.c_str(), std::ios::in);
 
     long long count=0;
-    std::vector<int> V;
+    std::vector<long long> V;
     std::vector<double> p;
 
     for (int i = 0; i < m; ++i)
@@ -25,7 +25,7 @@ bool SeriesCriteria(int d, long long amount, std::string inpfile)
     int alpha, beta;
 
     int l = 0;
-    int i = 0;
+    long long i = 0;
 
     while (i < amount/2 && in >> buf ) {
         alpha = abs(static_cast<int>(buf*10))%10;
@@ -44,9 +44,9 @@ bool SeriesCriteria(int d, long long amount, std::string inpfile)
     }
     if (l > 0)
         V[l]++;
-    for (int i = 0; i < V.size(); ++i)
+    for (long long i = 0; i < V.size(); ++i)
     {
-        double stat = (double)V[i]/amount;
+        // double stat = (double)V[i]/amount;
         // printf("V[%2d]/amount = %f\n", i, stat);
         // printf("p[%2d] = %f\n", i, p[i]);
 
@@ -56,7 +56,7 @@ bool SeriesCriteria(int d, long long amount, std::string inpfile)
 
     double stat = 0;
 
-    for (int i = 0; i < V.size(); ++i)
+    for (long long i = 0; i < V.size(); ++i)
     {
         stat += (double)std::pow(V[i]-count*p[i], 2)/(count*p[i]);
     }

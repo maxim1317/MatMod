@@ -14,22 +14,22 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
     std::ifstream in(inpfile.c_str(), std::ios::in);
     // printf("%s\n",inpfile.c_str());
 
-    std::vector<int> V, beta;
+    std::vector<long long> V, beta;
     std::vector<double> p;
     V.assign(5, 0);
     beta.assign(d, 0);
 
     double buf;
     int alpha = 0;
-    int count = 0;
+    long long count = 0;
 
 
-    int i = 0;
+    long long i = 0;
     while (i < amount/5) {
         count = 0;
         beta.clear();
         beta.assign(d, 0);
-        for (int j = 0; j < 5; ++j)
+        for (long long j = 0; j < 5; ++j)
         {
             in>>buf;            
             alpha = abs(static_cast<int>(buf*10))%10;
@@ -41,7 +41,7 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
         //     printf("%d ", beta[j]);
         // }
         // printf("\n");
-        for (int j = 0; j < beta.size(); ++j)
+        for (long long j = 0; j < beta.size(); ++j)
         {
             if (beta[j])
                 count++;
@@ -55,7 +55,7 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
     //     printf("V[%2d]/amount = %f\n", i, stat);
     // }
     int frac = 1;
-    for (int i = 1; i <= V.size(); ++i)
+    for (long long i = 1; i <= V.size(); ++i)
     {
         frac *= d - i + 1;
         p.push_back(frac*1.0/std::pow(d, 5) * Sterling(5, i));
@@ -63,7 +63,7 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
 
     double stat = 0;
 
-    for (int i = 0; i < V.size(); ++i)
+    for (long long i = 0; i < V.size(); ++i)
     {
         stat += (double)std::pow(V[i]-amount/5*p[i], 2)/(amount/5*p[i]);
     }
@@ -89,7 +89,7 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
     else
     {
         printf("[%s", conColor(110));
-        printf(" NOT OK \n");
+        printf(" NOT OK ");
         printf("%s]\n", conColor(0));
         return false;
     }
