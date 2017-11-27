@@ -73,7 +73,7 @@ void CheckAll(long long amount, int d, int option)
         std::string randfile = dir + "rand" + "_" + r[i].name + ext;
 
         if (option)
-        randfile = RandGen(r[i].d, r[i].m, r[i].a, r[i].b, r[i].y0, r[i].amount, r[i].name);
+        RandGen(r[i].d, r[i].m, r[i].a, r[i].b, r[i].y0, r[i].amount, r[i].name);
 
         printf("%s:\n", r[i].name.c_str());
         AllCriteria(r[i].d, r[i].amount, randfile);

@@ -84,7 +84,8 @@ bool SeriesCriteria(int d, long long amount, std::string inpfile)
     {
         printf("[%s", conColor(110));
         printf(" NOT OK ");
-        printf("%s]\n", conColor(0));
+        printf("%s]", conColor(0));
+        printf("  | Statistics = %lf V Chi Squared = %lf |\n", stat, chistat);
         return false;
     }
 }
