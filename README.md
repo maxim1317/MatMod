@@ -12,7 +12,7 @@
 
 ### /
 
-* [Makefile](https://github.com/maxim1317/MatMod/blob/Makefile) - собственно Makefile, описывающий правила сборки.
+* [Makefile](https://github.com/maxim1317/MatMod/blob/Makefile) - собственно, Makefile, описывающий правила сборки.
 
 ### /src
 
