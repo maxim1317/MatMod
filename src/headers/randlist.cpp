@@ -64,18 +64,20 @@ void CheckAll(long long amount, int d, int option)
     r.push_back(MAPLE);
     r.push_back(DERIVE);
 
-    std::string randfile;
+    std::string randfile, buf;
 
     for (int i = 0; i < r.size(); ++i)
     {
+        buf = r[i].name;
         std::string dir = "rands/";
         std::string ext = ".rand";
         std::string randfile = dir + "rand" + "_" + r[i].name + ext;
 
         if (option)
-        RandGen(r[i].d, r[i].m, r[i].a, r[i].b, r[i].y0, r[i].amount, r[i].name);
-
-        printf("%s:\n", r[i].name.c_str());
+            randfile = RandGen(r[i].d, r[i].m, r[i].a, r[i].b, r[i].y0, r[i].amount, buf);
+      
+        // std::cout << buf << ":\n";
+        printf("%s:\n", buf.c_str());
         AllCriteria(r[i].d, r[i].amount, randfile);
         printf("\n");
     }  

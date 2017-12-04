@@ -51,8 +51,8 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
     }
     // for (int i = 0; i < V.size(); ++i)
     // {
-    //     double stat = (double)V[i]/amount;
-    //     printf("V[%2d]/amount = %f\n", i, stat);
+    //     double stat = (double)V[i];
+    //     printf("V[%2d] = %f\n", i, stat);
     // }
     int frac = 1;
     for (long long i = 1; i <= V.size(); ++i)
@@ -60,6 +60,11 @@ bool PokerCriteria(int d, long long amount, std::string inpfile)
         frac *= d - i + 1;
         p.push_back(frac*1.0/std::pow(d, 5) * Sterling(5, i));
     }
+
+    // for (int i = 0; i < p.size(); ++i)
+    // {
+    //     printf("p[%2d] = %f\n", i, p[i]);
+    // }
 
     double stat = 0;
 
