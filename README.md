@@ -28,7 +28,7 @@
     * [crit_all.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_all.cpp) - вызывает все четыре проверки
     * [crit_freq.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_freq.cpp) - частотный критерий
     * [crit_pair.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_pair.cpp) - критерий пар
-    * [crit_series.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_series.cpp) -критерий серий
+    * [crit_series.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_series.cpp) - критерий серий
     * [crit_poker.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crit_poker.cpp) - покер-критерий
     * [crits.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/crits.cpp) - вспомогательный файл для сборки
   * [misc.cpp](https://github.com/maxim1317/MatMod/blob/master/src/headers/misc.cpp) - вспомогательные функции для разукраски терминала и выуживания опций из аргументов программы
