@@ -6,8 +6,8 @@ int main()
     long double cookie_temp, tea_temp, speed, t;
 
     FILE *out;
-    std::ifstream in("input.txt",std::ios::in);
-    out = fopen("tmp/output.txt", "w");
+    std::ifstream in("params.txt",std::ios::in);
+    out = fopen("tmp/out.txt", "w");
     if (!out)
     {
         printf("Broken lines, broken strings\nBroken threads, broken springs\nBroken idols, broken heads\nPeople sleeping in broken beds\nAin't no use jiving\nAin't no use joking\nEVERYTHING IS BROKEN\n\n\n\nSeriously though, this error shoulong double never be shown\nIf you are a user, god speed\nẺ̵͎͓̕x̸̛̜̯͑i̴̳̇̕t̸̻̦̊̃ ̵͈͈̂w̸͔̍h̵̭͌ͅĩ̷̠̽l̷̻̠͌̒ë̴̻́ ̸̺̮̒̾y̵͉̌ȯ̷͉̻ü̴͍̟ ̸͓̬̂͋c̶̛̖ȧ̵̀͜n̵̓̒͜\n");
