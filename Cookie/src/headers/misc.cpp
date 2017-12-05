@@ -59,7 +59,9 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
     else
         post[position-12] = '*'; 
 
+    printf("%s", conColor(130));
     printf("|");
+    printf("%s", conColor(0));
 
     for (int i = 0; i < pre.size(); ++i)
     {
@@ -73,7 +75,10 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
             printf("%s", " ");
     }
 
+    printf("%s", conColor(160));
     printf("[");
+    printf("%s", conColor(0));
+
     clr_cookie += 5;
     for (int i = 0; i < post.size(); ++i)
     {
@@ -105,19 +110,29 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
     // printf("%s", post.c_str());
     // printf("%s", conColor(0));
 
-    printf("]| ");
+    printf("%s", conColor(160));
+    printf("]");
+    printf("%s", conColor(0));
+
+    printf("%s", conColor(130));
+    printf("| ");
+    printf("%s", conColor(0));
     
     printf("%s", conColor(160));    
     printf("%6.3Lf", cur_time);
     printf("%s", conColor(0));
     
+    printf("%s", conColor(130));
     printf(" | ");
+    printf("%s", conColor(0));
     
     printf("%s", conColor(color));
     printf("%10.7Lf", temp);
     printf("%s", conColor(0));
 
+    printf("%s", conColor(130));
     printf(" |");
+    printf("%s", conColor(0));
      
     usleep(time/10*300);    
 }
