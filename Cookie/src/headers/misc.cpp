@@ -40,7 +40,7 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
 
     if (cur_time < 1.0*time/2)
         clr_cookie = 120;
-    else if ((cur_time > 2.0*time/3))
+    else if ((cur_time > 5.0*time/6))
         clr_cookie = 110;
     else
         clr_cookie = 130;
