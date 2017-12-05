@@ -20,13 +20,13 @@ std::string RandGen(int d, long long m, long long a, long long c, long long x0, 
     long long cur, prev;
 
     prev = x0;
-    fprintf(out, "%lld\n", prev/d);
+    fprintf(out, "%lf\n", (double)prev/m);
 
     for (long long i = 0; i < amount; ++i)
     {
         cur = (a * prev + c) % m;
         double res = (double)cur/m;
-        fprintf(out, "%f\n", res);
+        fprintf(out, "%lf\n", res);
         prev = cur;
     }
 
