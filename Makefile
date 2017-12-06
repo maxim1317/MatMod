@@ -10,6 +10,6 @@ gt: gt1 gt2 gt3
 gt1:
 	@make gt -C Cookie/
 gt2:
-	@make gt -C Dumbbellies/
+	@make gt -C Fluid/
 gt3:
 	@make gt -C RandCheck/

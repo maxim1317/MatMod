@@ -1,11 +1,11 @@
-MAIN = src/dumbbellies.cpp
+MAIN = src/fluid.cpp
 HEADERS = src/headers
 TMP = tmp
 FIELD = $(HEADERS)/Field_export.cpp $(HEADERS)/Field_main.cpp $(HEADERS)/Fields.cpp
 POINT = $(HEADERS)/Point_main.cpp
 MISC = $(HEADERS)/misc.cpp
 ODE = $(HEADERS)/ODEs.cpp
-HEAD = $(HEADERS)/dumbbellies.h
+HEAD = $(HEADERS)/fluid.h
 
 OBJS = $(TMP)/main.o $(TMP)/misc.o $(TMP)/point.o $(TMP)/field.o $(TMP)/ode.o
 
@@ -16,10 +16,10 @@ LFLAGS = -std=c++11 $(DEBUG)
 
 
 all: link
-	@./dumbbellies $(OPT)
+	@./fluid $(OPT)
 
 link: preps $(OBJS)
-	@$(CC) $(LFLAGS) $(OBJS) -o dumbbellies
+	@$(CC) $(LFLAGS) $(OBJS) -o fluid
 
 preps: clean
 	@mkdir -p Output/
@@ -41,10 +41,10 @@ $(TMP)/main.o:  preps $(HEAD) $(MISC) $(MAIN)
 	@$(CC) $(CFLAGS) $(MAIN) -o $(TMP)/main.o
 
 # all: compile
-# 	./dumbbellies
+# 	./fluid
 
 clean:
-	@rm -f dumbbellies
+	@rm -f fluid
 	@rm -rf $(TMP)
 
 erase: clean
