@@ -16,7 +16,8 @@ int main()
     in >> cookie_temp;
     in >> tea_temp;
     in >> speed;
-    in >> t;
+    in >> t;    
+    in.close();
     
     long double cur_temp, prev_temp;
     prev_temp = cookie_temp;
@@ -35,7 +36,6 @@ int main()
                 consolePrint(i*eps, t, cur_temp, tea_temp);
     }
     printf("\n");
-    
-    in.close();
+
     fclose(out);
 }
