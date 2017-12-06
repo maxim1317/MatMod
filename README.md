@@ -1,8 +1,5 @@
 # MatMod
 
-Программа для тестирования LCG на рандомность по четырем критериям. 
-Сначала идёт генерация файлов со случайными числами(если они еще не были сгенерированы) из отрезка [0, 1].
-Затем идёт само тестирование.
 
 ## Сборка
 
@@ -10,14 +7,18 @@
 
 ## Иерархия файлов
 
-### /
+### RandCheck/
 
-* [Makefile](https://github.com/maxim1317/MatMod/blob/master/RandCheck/Makefile) - собственно, Makefile, описывающий правила сборки.
+Программа для тестирования LCG на рандомность по четырем критериям. 
+Сначала идёт генерация файлов со случайными числами(если они еще не были сгенерированы) из отрезка [0, 1].
+Затем идёт само тестирование.
 
-### /src
+* [Makefile](https://github.com/maxim1317/MatMod/blob/master/RandCheck/Makefile) - собственно, Makefile, описывающий правила сборки RandCheck.
+
+### RandCheck/src/
 
 * [randcheck.cpp](https://github.com/maxim1317/MatMod/blob/master/RandCheck/src/randcheck.cpp) - main(). В нем задается количество рассматриваемых элементов.
-* [/src/headers](https://github.com/maxim1317/MatMod/blob/master/RandCheck/src/headers/) - директория с описанием всех используемых функкций
+* [RandCheck/src/headers/](https://github.com/maxim1317/MatMod/blob/master/RandCheck/src/headers/) - директория с описанием всех используемых функкций
   * [randcheck.h](https://github.com/maxim1317/MatMod/blob/master/RandCheck/src/headers/randcheck.h) - главный заголовочный файл с прототипами функций
   * Генераторы:
     * [chigen.cpp](https://github.com/maxim1317/MatMod/blob/master/RandCheck/src/headers/chigen.cpp) - генератор таблицы  χ2
