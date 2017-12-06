@@ -96,20 +96,6 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
         }
     }
 
-    // printf("%s", conColor(0));
-
-    // printf("%s", conColor(5));
-    // printf("%s", pre.c_str());
-    // printf("%s", conColor(0));
-
-    // printf("%s", conColor(clr_cookie));
-    // printf("*");
-    // printf("%s", conColor(0));
-
-    // printf("%s", conColor(5));
-    // printf("%s", post.c_str());
-    // printf("%s", conColor(0));
-
     printf("%s", conColor(160));
     printf("]");
     printf("%s", conColor(0));

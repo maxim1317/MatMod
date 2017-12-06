@@ -21,11 +21,13 @@ int main()
     long double cur_temp, prev_temp;
     prev_temp = cookie_temp;
     fprintf(out, "Time = %5.2Lf, Temperature = %9.6Lf\n", 0*eps, prev_temp);
+    
     printf("");
     printf("%s", conColor(130));
     printf("|         PROGRESS         |  TIME  |    TEMP    |");
     printf("%s\n", conColor(0));
     printf("Time = %5.2Lf, Temperature = %9.6Lf", 0*eps, prev_temp);
+    
     for (int i = 1; i < (long double)t/eps; ++i) {
         cur_temp = speed*eps*(tea_temp - prev_temp) + prev_temp;
         prev_temp = cur_temp;
@@ -33,6 +35,7 @@ int main()
                 consolePrint(i*eps, t, cur_temp, tea_temp);
     }
     printf("\n");
+    
     in.close();
     fclose(out);
 }
