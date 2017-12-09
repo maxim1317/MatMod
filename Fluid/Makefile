@@ -15,8 +15,8 @@ LFLAGS = -std=c++11 $(DEBUG)
 
 
 all: run
-	@gnuplot --persist plot_before.gnu& 2>/dev/null
-	@gnuplot --persist plot_after.gnu& 2>/dev/null
+	@gnuplot --persist plots/accur.gnu& 2>/dev/null
+	@gnuplot --persist plots/approx.gnu& 2>/dev/null
 
 run: link
 	@./fluid $(OPT)

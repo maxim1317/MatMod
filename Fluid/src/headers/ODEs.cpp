@@ -3,7 +3,6 @@
 void init(double deltaT, double deltaX, double maxT, double maxX)
 {
     Field fluid(deltaT, deltaX, maxT, maxX);
-    Field before = fluid;
     Field diff = fluid;
 
             // printf("!");
@@ -17,6 +16,7 @@ void init(double deltaT, double deltaX, double maxT, double maxX)
     // printf("---------------------------------------------------------------------> time\n");
     // fluid.Print();
     fluid.Export("plots/after.txt");
+    Field before(deltaT, deltaX, maxT, maxX);
     before.Export("plots/before.txt");
     for (int i = 0; i < fluid.numT; ++i)
     {
@@ -26,6 +26,14 @@ void init(double deltaT, double deltaX, double maxT, double maxX)
         }
     }
     diff.Export("plots/diff.txt");
+    char* title = (char*)"Approximate";
+    char* to = (char*)"plots/approx.gnu";
+    char* file = (char*)"plots/after.txt";
+    GenerateGNU(fluid, title, to, file);
+    title = (char*)"Accurate";
+    to = (char*)"plots/accur.gnu";
+    file = (char*)"plots/before.txt";
+    GenerateGNU(before, title, to, file);
 }
 
 double ODE(Field f, int x, int t)

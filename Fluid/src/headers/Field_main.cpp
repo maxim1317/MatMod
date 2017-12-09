@@ -2,7 +2,7 @@
 
 void Field::fieldInit() //тут нужно создать сетку и сгенерить граничные условия
 {
-    std::vector<double> v(numT, -1);
+    std::vector<double> v(numT, -1.0);
     field.assign(numX, v);
     // for (int i = 0; i < numT; ++i)
     // {
@@ -17,7 +17,7 @@ void Field::fieldInit() //тут нужно создать сетку и сге�
     {
         for (int j = 0; j < numT; ++j)
         {
-            field[i][j] = 3*(i*deltaX-j*deltaT)+7;
+            field[i][j] = 3.0*(i*deltaX-j*deltaT)+7;
         }
     }
 }

@@ -1,4 +1,4 @@
-all: t1 t2 ьфлуt3
+all: t1 t2 t3
 
 t1:
 	@make -C Cookie/

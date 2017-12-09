@@ -6,7 +6,7 @@
 #include <fstream>
 #include <cstdio>
 #include <vector>
-#include <string>
+// #include <string>
 #include <cmath>
 
 class Field // сетка
@@ -30,5 +30,7 @@ public:
 void init(double, double, double, double); // запуск вычислений
 
 double ODE(Field, int, int);
+
+void GenerateGNU(Field, char*, char*, char*);
 
 #endif 

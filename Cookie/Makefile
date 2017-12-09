@@ -11,9 +11,11 @@ DEBUG = -g -Wall
 CFLAGS = -std=c++11 -c $(DEBUG)
 LFLAGS = -std=c++11 $(DEBUG)
 
+all: run
+	@gnuplot --persist plot.gnu& 2>/dev/null
 
-all: link
-	@./cookie
+run: link
+	@./cookie 
 
 link: preps $(OBJS)
 	@$(CC) $(LFLAGS) $(OBJS) -o cookie
@@ -27,10 +29,9 @@ $(TMP)/misc.o:  preps $(HEAD) $(MISC)
 $(TMP)/main.o:  preps $(HEAD) $(MISC) $(MAIN)
 	@$(CC) $(CFLAGS) $(MAIN) -o $(TMP)/main.o
 
-# all: compile
-# 	./cookie
-
 clean:
+	@gnuplot&
+	@pkill -f gnuplot
 	@rm -f cookie
 	@rm -rf $(TMP)
 

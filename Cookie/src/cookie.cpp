@@ -32,7 +32,7 @@ int main()
     for (int i = 1; i < (long double)t/eps; ++i) {
         cur_temp = speed*eps*(tea_temp - prev_temp) + prev_temp;
         prev_temp = cur_temp;
-        fprintf(out, "Time = %5.2Lf, Temperature = %9.6Lf\n", i*eps, cur_temp);
+        fprintf(out, "%Lf %Lf\n", i*eps, cur_temp);
                 consolePrint(i*eps, t, cur_temp, tea_temp);
     }
     printf("\n");
