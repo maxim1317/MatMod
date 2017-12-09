@@ -1,5 +1,5 @@
-#ifndef __DUMBBELLIES_H__
-#define __DUMBBELLIES_H__
+#ifndef __FLUID_H__
+#define __FLUID_H__
 
 #include <stdio.h>
 #include <iostream>
@@ -7,35 +7,36 @@
 #include <cstdio>
 #include <vector>
 #include <string>
-#include <climits>
 #include <cmath>
 
 class Point
 {
-private:
-    double x, y, val;
-
 public:
+    double x, t, val;
+
     Point(double, double, double);
 };
 
-class Field
+class Field // сетка
 {
 public:
-    double deltaTime, deltaSpace, maxTime, maxSpace;
+    int numX, numT;
+    double deltaT, deltaX, maxT, maxX;
+    std::vector<std::vector<double>> field;
 
-    void fieldInit();
+    void fieldInit(); // создает сетку и генерит граничные условия
 
-    void Export();
+    void Print();
+    void Export(); // вывод в файлы
 
     Field(double, double, double, double);
+    Field(const Field&);
     ~Field();
     
 };
 
-void init();
+void init(double, double, double, double); // запуск вычислений
 
-double IODE(Field, Point);
-double IIODE(Field, Point);
+double ODE(Field, int, int);
 
 #endif 

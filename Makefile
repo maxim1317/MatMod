@@ -1,7 +1,9 @@
-all: t1 t3
+all: t1 t2 t3
 
 t1:
 	@make -C Cookie/
+t2:
+	@make -C Fluid/	
 t3:
 	@make -C RandCheck/
 	
