@@ -27,7 +27,7 @@ public:
     void fieldInit(); // создает сетку и генерит граничные условия
 
     void Print();
-    void Export(); // вывод в файлы
+    void Export(const char*); // вывод в файлы
 
     Field(double, double, double, double);
     Field(const Field&);

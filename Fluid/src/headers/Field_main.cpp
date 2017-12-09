@@ -34,7 +34,7 @@ Field::Field(double deltaT_, double deltaX_, double maxT_, double maxX_)
 
     fieldInit();
 
-    Print();
+    // Print();
 
 }
 

@@ -15,14 +15,19 @@ CFLAGS = -std=c++11 -c $(DEBUG)
 LFLAGS = -std=c++11 $(DEBUG)
 
 
-all: link
+all: run
+	@gnuplot --persist plot_before.gnu&
+	@gnuplot --persist plot_after.gnu&
+	@gnuplot --persist plot_diff.gnu&
+
+run: link
 	@./fluid $(OPT)
 
 link: preps $(OBJS)
 	@$(CC) $(LFLAGS) $(OBJS) -o fluid
 
 preps: clean
-	@mkdir -p Output/
+	@mkdir -p plots/
 	@mkdir -p $(TMP)/
 
 $(TMP)/misc.o:  preps $(HEAD) $(MISC)
@@ -48,7 +53,8 @@ clean:
 	@rm -rf $(TMP)
 
 erase: clean
-	@rm -rf Output
+	@rm -rf plots
+
 
 gt: erase
 	git add *
