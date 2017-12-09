@@ -22,7 +22,7 @@ void init(double deltaT, double deltaX, double maxT, double maxX)
     {
         for (int j = 0; j < fluid.numX; ++j)
         {
-            diff.field[j][i] = fabs(fluid.field[j][i] - before.field[j][i]);
+            diff.field[j][i] = (fluid.field[j][i] - before.field[j][i]);
         }
     }
     diff.Export("plots/diff.txt");

@@ -9,14 +9,6 @@
 #include <string>
 #include <cmath>
 
-class Point
-{
-public:
-    double x, t, val;
-
-    Point(double, double, double);
-};
-
 class Field // сетка
 {
 public:
