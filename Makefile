@@ -1,4 +1,4 @@
-all: t1 t2 t3
+all: t1 t2 ьфлуt3
 
 t1:
 	@make -C Cookie/
@@ -15,3 +15,12 @@ gt2:
 	@make gt -C Fluid/
 gt3:
 	@make gt -C RandCheck/
+
+erase: erase1 erase2 erase3
+
+erase1:
+	@make erase -C Cookie/
+erase2:
+	@make erase -C Fluid/
+erase3:
+	@make erase -C RandCheck/
