@@ -4,14 +4,18 @@ t1:
 	@DontAsk/cookie.sh
 	@make -C Cookie/ --no-print-directory
 	@echo ""
+	@sleep 3
 t2:
 	@DontAsk/fluid.sh
 	@make -C Fluid/	--no-print-directory
 	@echo ""
+	@sleep 3
+
 t3:
 	@DontAsk/randcheck.sh
 	@make -C RandCheck/ --no-print-directory
 	@echo ""
+	@sleep 3
 
 gt: gt1 gt2 gt3
 	git add *

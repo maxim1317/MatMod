@@ -1,3 +1,4 @@
+set term wxt position 0,0 size 955,540
 set title "Cookie"
 set xlabel "time"
 set ylabel "temperature"

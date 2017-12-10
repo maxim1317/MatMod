@@ -70,9 +70,9 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
         {
             printf("%s", conColor(clr_cookie));
             if (i % 4 == 0)
-                printf("\\");
-            else if (i % 4 == 1)
                 printf("/");
+            else if (i % 4 == 1)
+                printf("\\");
             else if (i % 4 == 2)
                 printf("#");
             else 
