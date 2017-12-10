@@ -56,9 +56,9 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
     std::string post(23, ' ');
 
     if (position < 23)
-        pre[position] = '*';
+        pre[position] = '#';
     else
-        post[position-23] = '*'; 
+        post[position-23] = '#'; 
 
     printf("%s", conColor(130));
     printf("|");
@@ -66,10 +66,17 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
 
     for (int i = 0; i < pre.size(); ++i)
     {
-        if (pre[i] == '*')
+        if (pre[i] == '#')
         {
             printf("%s", conColor(clr_cookie));
-            printf("*");
+            if (i % 4 == 0)
+                printf("\\");
+            else if (i % 4 == 1)
+                printf("/");
+            else if (i % 4 == 2)
+                printf("#");
+            else 
+                printf("-");
             printf("%s", conColor(0));
         }
         else
@@ -83,10 +90,17 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
     clr_cookie += 5;
     for (int i = 0; i < post.size(); ++i)
     {
-        if (post[i] == '*')
+        if (post[i] == '#')
         {
             printf("%s", conColor(clr_cookie));
-            printf("*");
+                        if (i % 4 == 0)
+                printf("\\");
+            else if (i % 4 == 1)
+                printf("/");
+            else if (i % 4 == 2)
+                printf("#");
+            else 
+                printf("-");
             printf("%s", conColor(0));
         }
         else

@@ -55,6 +55,8 @@ void GenerateGNU(Field &f, char* title, char* to, char* file)
 {
     FILE *out;
     out = fopen(to, "w");
+    fprintf(out, "set term wxt position 0,0 size 955,540\n");
+    fprintf(out, "set rmargin 5\n");
     fprintf(out, "set title \"%s\"\n", title);
     fprintf(out, "set xlabel \"x\"\n");
     fprintf(out, "set ylabel \"time\"\n");
@@ -62,9 +64,11 @@ void GenerateGNU(Field &f, char* title, char* to, char* file)
 
     fprintf(out, "set autoscale\n");
 
+
     fprintf(out, "splot \"plots/diff.txt\" u 1:2:3, ");
     fprintf(out, "\"%s\" u 1:2:3\n", file);
     fprintf(out, "set style data lines\n");
+
     fprintf(out, "set hidden3d\n");
     fprintf(out, "set dgrid3d %d,%d qnorm 2\n", f.numX, f.numT);
     fprintf(out, "splot \"plots/diff.txt\" u 1:2:3, ");
