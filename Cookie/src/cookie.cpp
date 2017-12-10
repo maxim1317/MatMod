@@ -25,7 +25,7 @@ int main()
     
     printf("");
     printf("%s", conColor(130));
-    printf("|         PROGRESS         |  TIME  |    TEMP    |");
+    printf("|                 P R O G R E S S                |  TIME  |    TEMP    |");
     printf("%s\n", conColor(0));
     printf("Time = %5.2Lf, Temperature = %9.6Lf", 0*eps, prev_temp);
     

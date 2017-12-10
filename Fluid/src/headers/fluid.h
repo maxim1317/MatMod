@@ -18,7 +18,7 @@ public:
 
     void fieldInit(); // создает сетку и генерит граничные условия
 
-    void Print();
+    void Print(Field &);
     void Export(const char*); // вывод в файлы
 
     Field(double, double, double, double);
@@ -29,8 +29,10 @@ public:
 
 void init(double, double, double, double); // запуск вычислений
 
-double ODE(Field, int, int);
+double ODE(Field &, int, int);
 
-void GenerateGNU(Field, char*, char*, char*);
+void GenerateGNU(Field &, char*, char*, char*);
+
+const char* conColor(int);
 
 #endif 

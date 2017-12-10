@@ -1,14 +1,33 @@
 #include "fluid.h"
 
-void Field::Print()
+void Field::Print(Field &diff)
 {
-    for (int i = numX-1; i >= 0; --i)
+    printf("");
+    printf("%s", conColor(130));
+    printf("    |      |      |      |      |      |      |      |      |      |    ");
+    printf("%s\n", conColor(0));
+    for (int i = 0; i < numX; i += (int)numT/10)
     {
-        for (int j = 0; j < numT; ++j)
+        for (int j = numT - 1; j >= 0; j -= (int)numT/10)
         {
-            printf("%6.2lf ", field[j][i]);
+            printf("%s", conColor(130));
+            printf("--");
+            printf("%s", conColor(0));
+            // field[j][i]+=1;
+            if (fabs(diff.field[j][i])>0.0001 )
+                printf("%s", conColor(138));
+            else
+                printf("%s", conColor(120));
+            printf("%5.2lf", field[j][i]);
+            printf("%s", conColor(0));
         }
+        printf("%s", conColor(130));
+        printf("--");
+        printf("%s", conColor(0));
         printf("\n");
+        printf("%s", conColor(130));
+        printf("    |      |      |      |      |      |      |      |      |      |    ");
+        printf("%s\n", conColor(0));
     }
 }
 
@@ -32,7 +51,7 @@ void Field::Export(const char *s)
     fclose(out);
 }
 
-void GenerateGNU(Field f, char* title, char* to, char* file)
+void GenerateGNU(Field &f, char* title, char* to, char* file)
 {
     FILE *out;
     out = fopen(to, "w");

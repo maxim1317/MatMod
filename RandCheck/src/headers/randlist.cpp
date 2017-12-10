@@ -77,7 +77,10 @@ void CheckAll(long long amount, int d, int option)
             randfile = RandGen(r[i].d, r[i].m, r[i].a, r[i].b, r[i].y0, r[i].amount, buf);
       
         // std::cout << buf << ":\n";
-        printf("%s:\n", buf.c_str());
+        printf("");
+        printf("%s", conColor(130));
+        printf("%s:", buf.c_str());
+        printf("%s\n", conColor(0));
         AllCriteria(r[i].d, r[i].amount, randfile);
         printf("\n");
     }  

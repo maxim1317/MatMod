@@ -44,19 +44,21 @@ void consolePrint (long double cur_time, long double time, long double temp, lon
     else
         clr_cookie = 130;
 
-    std::string bsp(26+37, '\b');
+
+
+    std::string bsp(46+37, '\b');
     printf("%s", bsp.c_str());
-    int position = 24*cur_time/time;
+    int position = 46*cur_time/time;
 
     // std::string pre(position, ' ');
     // std::string post(25 - position-1, ' ');
-    std::string pre(12, ' ');
-    std::string post(12, ' ');
+    std::string pre(23, ' ');
+    std::string post(23, ' ');
 
-    if (position < 12)
+    if (position < 23)
         pre[position] = '*';
     else
-        post[position-12] = '*'; 
+        post[position-23] = '*'; 
 
     printf("%s", conColor(130));
     printf("|");

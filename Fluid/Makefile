@@ -3,7 +3,7 @@ HEADERS = src/headers
 TMP = tmp
 FIELD = $(HEADERS)/Field_export.cpp $(HEADERS)/Field_main.cpp $(HEADERS)/Fields.cpp
 MISC = $(HEADERS)/misc.cpp
-ODE = $(HEADERS)/ODEs.cpp
+ODE = $(HEADERS)/Logic.cpp
 HEAD = $(HEADERS)/fluid.h
 
 OBJS = $(TMP)/main.o $(TMP)/misc.o $(TMP)/field.o $(TMP)/ode.o

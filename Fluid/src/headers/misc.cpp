@@ -17,10 +17,10 @@ const char* conColor (int code)
         res = "\033[";
         int bold = code/ 100;
         int fg = (code / 10) % 10;
-        // int bg = code % 10;
+        int bg = code % 10;
         res += std::to_string(bold) + ";";
         res += std::to_string(fg+30) + ";";
-        res += std::to_string(49) + "m";
+        res += std::to_string(49-bg) + "m";
 
         return res.c_str();
     }

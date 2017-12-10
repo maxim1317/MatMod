@@ -15,6 +15,7 @@ void init(double deltaT, double deltaX, double maxT, double maxX)
     }
     // printf("---------------------------------------------------------------------> time\n");
     // fluid.Print();
+    
     fluid.Export("plots/after.txt");
     Field before(deltaT, deltaX, maxT, maxX);
     before.Export("plots/before.txt");
@@ -34,9 +35,10 @@ void init(double deltaT, double deltaX, double maxT, double maxX)
     to = (char*)"plots/accur.gnu";
     file = (char*)"plots/before.txt";
     GenerateGNU(before, title, to, file);
+    fluid.Print(diff);
 }
 
-double ODE(Field f, int x, int t)
+double ODE(Field &f, int x, int t)
 {
     return (f.field[x-1][t-1]-f.field[x+1][t-1])*f.deltaT/(2*f.deltaX)+f.field[x][t-1];
 }
