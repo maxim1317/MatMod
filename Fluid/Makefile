@@ -44,8 +44,6 @@ $(TMP)/main.o:  preps $(HEAD) $(MISC) $(MAIN)
 # 	./fluid
 
 clean:
-	@gnuplot&
-	@pkill -f gnuplot
 	@rm -f fluid
 	@rm -rf $(TMP)
 
