@@ -9,7 +9,7 @@ void Field::fieldInit() //тут нужно создать сетку и сге�
         for (int j = 0; j < numT; ++j)
         {
             if (!fl)
-                {field[i][j] = 3.0*(i*deltaX-j*deltaT)+7; printf("!\n");}
+                {field[i][j] = 3.0*(i*deltaX-j*deltaT)+7;}
             else
                 field[i][j] = 8.0*(i*deltaX*i*deltaX+2.0*j*deltaT)-4*i*deltaX+3;
         }
