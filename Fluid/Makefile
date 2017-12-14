@@ -21,7 +21,7 @@ all: run
 run: link
 	@./fluid $(OPT)
 
-link: preps $(OBJS)
+link: close preps $(OBJS)
 	@$(CC) $(LFLAGS) $(OBJS) -o fluid
 
 preps: clean
@@ -40,9 +40,6 @@ $(TMP)/field.o: preps $(HEAD) $(MISC) $(FIELD)
 $(TMP)/main.o:  preps $(HEAD) $(MISC) $(MAIN)
 	@$(CC) $(CFLAGS) $(MAIN) -o $(TMP)/main.o
 
-# all: compile
-# 	./fluid
-
 clean:
 	@rm -f fluid
 	@rm -rf $(TMP)
@@ -53,3 +50,7 @@ erase: clean
 
 gt: erase
 	git add *
+
+close:
+	@gnuplot&
+	@pkill -f gnuplot

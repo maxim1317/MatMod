@@ -37,3 +37,6 @@ erase3:
 clean:
 	@gnuplot&
 	@pkill -f gnuplot
+
+count: erase
+	@find . -name "*.cpp" -o -name "*.h" -o -name "Makefile" -o -name "*.gnu" -o -name "*.sh" | xargs wc -l

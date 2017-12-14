@@ -6,9 +6,10 @@ void Field::Print(Field &diff)
     printf("%s", conColor(130));
     printf("    |      |      |      |      |      |      |      |      |      |    ");
     printf("%s\n", conColor(0));
-    for (int i = 0; i < numX; i += (int)numT/10)
+    // printf("%d\n", numX);
+    for (int i = numX - 1; i >= 0; i -= round((double)numX/10))
     {
-        for (int j = numT - 1; j >= 0; j -= (int)numT/10)
+        for (int j = 0; j < numT; j += round((double)numT/10))
         {
             printf("%s", conColor(130));
             printf("--");
@@ -39,12 +40,12 @@ void Field::Export(const char *s)
     {
         printf("Broken lines, broken strings\nBroken threads, broken springs\nBroken idols, broken heads\nPeople sleeping in broken beds\nAin't no use jiving\nAin't no use joking\nEVERYTHING IS BROKEN\n\n\n\nSeriously though, this error shoulong double never be shown\nIf you are a user, god speed\nẺ̵͎͓̕x̸̛̜̯͑i̴̳̇̕t̸̻̦̊̃ ̵͈͈̂w̸͔̍h̵̭͌ͅĩ̷̠̽l̷̻̠͌̒ë̴̻́ ̸̺̮̒̾y̵͉̌ȯ̷͉̻ü̴͍̟ ̸͓̬̂͋c̶̛̖ȧ̵̀͜n̵̓̒͜\n");
     }
-    for (int i = numX-1; i >= 0; --i)
+    for (int i = 0; i < numX; i++)
     {
         for (int j = 0; j < numT; ++j)
         {
 
-            fprintf(out, "%lf %lf %lf\n", i*deltaX, j*deltaT, field[j][i]);
+            fprintf(out, "%lf %lf %lf\n", i*deltaX, j*deltaT, field[i][j]);
         }
         // printf("\n");
     }
@@ -71,8 +72,8 @@ void GenerateGNU(Field &f, char* title, char* to, char* file)
 
     fprintf(out, "set hidden3d\n");
     fprintf(out, "set dgrid3d %d,%d qnorm 2\n", f.numX, f.numT);
-    fprintf(out, "splot \"plots/diff.txt\" u 1:2:3, ");
-    fprintf(out, "\"%s\" u 1:2:3 with lines \n", file);
+    fprintf(out, "splot \"plots/diff.txt\" u 1:2:3 title \"Difference between approximate and actual values\", ");
+    fprintf(out, "\"%s\" u 1:2:3 with lines title \"%s values\" \n", file, title);
 
     fclose(out);
 }

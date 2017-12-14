@@ -12,6 +12,7 @@
 class Field // сетка
 {
 public:
+    bool fl;
     int numX, numT;
     double deltaT, deltaX, maxT, maxX;
     std::vector<std::vector<double>> field;
@@ -21,15 +22,15 @@ public:
     void Print(Field &);
     void Export(const char*); // вывод в файлы
 
-    Field(double, double, double, double);
+    Field(double, double, double, double, bool);
     Field(const Field&);
     ~Field();
     
 };
 
-void init(double, double, double, double); // запуск вычислений
+void init(double, double, double, double, bool); // запуск вычислений
 
-double ODE(Field &, int, int);
+double ODE(Field &, int, int, int);
 
 void GenerateGNU(Field &, char*, char*, char*);
 

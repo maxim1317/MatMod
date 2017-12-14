@@ -4,25 +4,19 @@ void Field::fieldInit() //тут нужно создать сетку и сге�
 {
     std::vector<double> v(numT, -1.0);
     field.assign(numX, v);
-    // for (int i = 0; i < numT; ++i)
-    // {
-    //     field[0][i] = -3*i*deltaT+7;
-    //     field[numX-1][i] = -3*i*deltaT+3*i*deltaX+7;
-    // }
-    // for (int i = 0; i < numX; ++i)
-    // {
-    //     field[i][0] = 3 * i * deltaX + 7;
-    // }
     for (int i = 0; i < numX; ++i)
     {
         for (int j = 0; j < numT; ++j)
         {
-            field[i][j] = 3.0*(i*deltaX-j*deltaT)+7;
+            if (!fl)
+                {field[i][j] = 3.0*(i*deltaX-j*deltaT)+7; printf("!\n");}
+            else
+                field[i][j] = 8.0*(i*deltaX*i*deltaX+2.0*j*deltaT)-4*i*deltaX+3;
         }
     }
 }
 
-Field::Field(double deltaT_, double deltaX_, double maxT_, double maxX_)
+Field::Field(double deltaT_, double deltaX_, double maxT_, double maxX_, bool fl_)
 {
     deltaT = deltaT_;
     deltaX = deltaX_;
@@ -31,6 +25,8 @@ Field::Field(double deltaT_, double deltaX_, double maxT_, double maxX_)
 
     numT = maxT/deltaT;
     numX = maxX/deltaX;
+
+    fl = fl_;
 
     fieldInit();
 
@@ -49,6 +45,8 @@ Field::Field(const Field &obj)
 
     numT = maxT/deltaT;
     numX = maxX/deltaX;
+
+    fl = obj.fl;
 
 }
     

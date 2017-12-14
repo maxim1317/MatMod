@@ -3,10 +3,11 @@
 int main(int argc, char const *argv[])
 {
     double deltaT, deltaX, maxT, maxX;
-    deltaT = 0.05;
-    deltaX = 0.05;
-    maxT = 2;
-    maxX = 2;
-    init(deltaT, deltaX, maxT, maxX);
+    deltaT = 0.1;
+    deltaX = 0.1;
+    maxT = 1.8;
+    maxX = 1.8;
+    bool flag = 0;
+    init(deltaT, deltaX, maxT, maxX, flag);
     return 0;
 }
