@@ -1,5 +1,5 @@
 all: clean t1 t2 t3
-	@killall play
+	
 t1:
 	@DontAsk/cookie.sh
 	@make -C Cookie/ --no-print-directory
@@ -42,6 +42,7 @@ count: erase
 	@find . -name "*.cpp" -o -name "*.h" -o -name "Makefile" -o -name "*.gnu" -o -name "*.sh" | xargs wc -l
 
 magic: clean start_music t1 t2 t3
+	@killall play
 
 start_music: init_music
 	@(play -q DontAsk/tmp.mp3) > /dev/null 2>&1 &
